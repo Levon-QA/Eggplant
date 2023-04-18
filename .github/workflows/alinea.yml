@@ -1,0 +1,27 @@
+name: "Alinea"
+
+# Configure which branch that will trigger Eggplant DAI GitHub Action
+# on:
+#  push:
+#    branches:
+#      - main 
+#  pull_request:
+#    branches:
+#      - main
+
+jobs:
+  Run-DAI-Test-Configuration:
+    strategy: # Optional configuration by using matrix strategy
+      max-parallel: 1 # To set the maximum number of jobs that can run simultaneously 
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest] # Operating support by Eggplant DAI GitHub Action
+    runs-on: ${{ matrix.os }} # Provide OS matrix
+    name: Run Test Configuration
+    steps:
+      - run: echo "Trigger event.. ${{ github.commit }}. Runner OS.. ${{ runner.windows-latest }}."
+      - name: Eggplant Runner
+        uses: keysight-eggplant/eggplant-github-action@1.0.0
+        with:
+          serverURL: "https://melongena.sensotec.be:8000/" # Required. Details below
+          testConfigID: "65083a1f-4fdd-4e9b-b758-dc73c5ebcc81" # Required. Details below
+          clientSecret: "${{ secrets.alinea_github_key }}" # Required. Details below
