@@ -24,4 +24,6 @@ jobs:
         with:
           serverURL: "https://melongena.sensotec.be:8000/" # Required. Details below
           testConfigID: "65083a1f-4fdd-4e9b-b758-dc73c5ebcc81" # Required. Details below
+          clientID: "client:dai:api:integration:7586a0fb-6196-4478-b09a-f629470cc9b6" # Required. Details below
           clientSecret: "${{ secrets.alinea_github_key }}" # Required. Details below
+          
