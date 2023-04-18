@@ -20,7 +20,7 @@ jobs:
     steps:
       - run: echo "Trigger event.. ${{ github.commit }}. Runner OS.. ${{ runner.windows-latest }}."
       - name: Eggplant Runner
-        uses: keysight-eggplant/eggplant-github-action@v1.0.6-beta
+        uses: keysight-eggplant/eggplant-github-action@v1.0.5
         with:
           serverURL: "https://melongena.sensotec.be:8000/" # Required. Details below
           testConfigID: "65083a1f-4fdd-4e9b-b758-dc73c5ebcc81" # Required. Details below
