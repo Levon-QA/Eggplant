@@ -1,6 +1,6 @@
 name: "Alinea"
 
-# Configure which branch that will trigger Eggplant DAI GitHub Action
+# Configure which branch that will trigger Eggplant DAI GitHub Actions
 on:
   push:
     branches:
